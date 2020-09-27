@@ -470,8 +470,8 @@ class ModelCheckpoint(Callback):
         if current is None:
             m = f"Can save best model only with {self.monitor} available, skipping."
             if self.monitor == 'checkpoint_on':
-                m = f'No checkpoint_on found. Hint: Did you set it in EvalResult(checkpoint_on=tensor) or ' \
-                    f'TrainResult(checkpoint_on=tensor)?'
+                m = 'No checkpoint_on found. Hint: Did you set it in EvalResult(checkpoint_on=tensor) or ' \
+                    'TrainResult(checkpoint_on=tensor)?'
             rank_zero_warn(m, RuntimeWarning)
         elif self.check_monitor_top_k(current):
             self._do_check_save(filepath, current, epoch, trainer, pl_module)
@@ -530,4 +530,3 @@ class ModelCheckpoint(Callback):
         for cur_path in del_list:
             if cur_path != filepath:
                 self._del_model(cur_path)
-
