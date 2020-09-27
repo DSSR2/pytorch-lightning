@@ -21,6 +21,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 - Added EMB similarity ([#3349](https://github.com/PyTorchLightning/pytorch-lightning/pull/3349))
 
+- Added `ModelCheckpoint.to_yaml` method ([#3048] (https://github.com/PyTorchLightning/pytorch-lightning/pull/3048))
+
 - Added error when AUROC metric is used for multiclass problems ([#3350](https://github.com/PyTorchLightning/pytorch-lightning/pull/3350))
 
 ### Changed
