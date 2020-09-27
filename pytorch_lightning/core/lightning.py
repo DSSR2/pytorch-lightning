@@ -23,6 +23,11 @@ from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union
 
 import torch
 import torch.distributed as torch_distrib
+from torch import ScriptModule, Tensor
+from torch.nn import Module
+from torch.nn.parallel import DistributedDataParallel
+from torch.optim.optimizer import Optimizer
+
 from pytorch_lightning import _logger as log
 from pytorch_lightning.core.grads import GradInformation
 from pytorch_lightning.core.hooks import DataHooks, ModelHooks
@@ -32,16 +37,7 @@ from pytorch_lightning.core.step_result import EvalResult, TrainResult
 from pytorch_lightning.overrides.data_parallel import LightningDistributedDataParallel
 from pytorch_lightning.utilities import rank_zero_warn
 from pytorch_lightning.utilities.device_dtype_mixin import DeviceDtypeModuleMixin
-from pytorch_lightning.utilities.parsing import (
-    AttributeDict,
-    collect_init_args,
-    get_init_args,
-)
-from torch import ScriptModule, Tensor
-from torch.nn import Module
-from torch.nn.parallel import DistributedDataParallel
-from torch.optim.optimizer import Optimizer
-
+from pytorch_lightning.utilities.parsing import AttributeDict, collect_init_args, get_init_args
 
 try:
     import torch_xla.core.xla_model as xm
