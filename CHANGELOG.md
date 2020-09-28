@@ -21,7 +21,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
 - Added EMB similarity ([#3349](https://github.com/PyTorchLightning/pytorch-lightning/pull/3349))
 
-- Added `ModelCheckpoint.to_yaml` method ([#3048] (https://github.com/PyTorchLightning/pytorch-lightning/pull/3048))
+- Added `ModelCheckpoint.to_yaml` method ([#3048](https://github.com/PyTorchLightning/pytorch-lightning/pull/3048))
 
 - Added error when AUROC metric is used for multiclass problems ([#3350](https://github.com/PyTorchLightning/pytorch-lightning/pull/3350))
 
@@ -197,6 +197,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 - Fixed normalize mode at confusion matrix (replace NaNs with zeros) ([#3465](https://github.com/PyTorchLightning/pytorch-lightning/pull/3465))
 
 - Fixed Metric aggregation ([#3321](https://github.com/PyTorchLightning/pytorch-lightning/pull/3321))
+
+- Fixed global step increment in training loop when `training_epoch_end` hook is used ([#3673](https://github.com/PyTorchLightning/pytorch-lightning/pull/3673))
 
 - Fixed dataloader shuffling not getting turned off with `overfit_batches > 0` and `distributed_backend = "ddp"` ([#3534](https://github.com/PyTorchLightning/pytorch-lightning/pull/3534))
 
